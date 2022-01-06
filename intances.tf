@@ -19,7 +19,7 @@ resource "google_compute_instance" "server" {
 
   boot_disk {
     initialize_params {
-      image = var.instance_image
+      image = "debian-cloud/debian-9"
     }
   }
 

@@ -1,3 +1,6 @@
 .terraform/
 
 terraform.json
+
+/modules/vms/provider.tf
+

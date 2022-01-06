@@ -21,4 +21,5 @@ resource "google_storage_bucket_object" "tfstate" {
   bucket = "bucket-arquivo-de-estado"
 }
 
+
 */

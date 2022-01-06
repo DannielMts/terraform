@@ -1,23 +1,16 @@
 variable "environment" {
   type        = string
   description = "Digite 'dev' ou 'prod'"
+  validation {
+    condition     = var.environment == "dev" || var.environment == "prod"
+    error_message = "Digite dev ou prod."
+  }
 }
 
 variable "gcp_region" {
   type        = string
   description = ""
   default     = "us-east1"
-}
-
-variable "instance_image" {
-  type        = string
-  description = ""
-  default     = "debian-cloud/debian-9"
-
-  validation {
-    condition     = length(var.instance_image) > 6 && substr(var.instance_image, 0, 6) == "debian"
-    error_message = "A imagem da instancia deve ser o Debian."
-  }
 }
 
 variable "instance_number" {
@@ -53,7 +46,7 @@ variable "instance_labels" {
 }
 
 variable "criador" {
-  type = string
+  type        = string
   description = ""
-  default = "danniel-martins"
+  default     = "danniel-martins"
 }
