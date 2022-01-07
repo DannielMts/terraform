@@ -4,7 +4,11 @@ provider "google" {
   credentials = "terraform.json"
 }
 
-module "bucket" {
-  source = "./modules/bucket"
-  
+terraform {
+  backend "gcs" {
+    bucket  = "bucket-arquivo-de-estado"
+    prefix  = "state"
+    credentials = "terraform.json"
+  }
 }
+

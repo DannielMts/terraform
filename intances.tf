@@ -4,15 +4,14 @@ resource "google_compute_instance" "server" {
     
   count = local.instance_number <= 0 ? 0 : local.instance_number
     
-  name         = "server-${var.environment}-${count.index}"
-  machine_type = lookup(var.instance_type, var.environment)
-  zone         = "us-east1-b"
+  name         = "server-${local.environment}-${count.index}"
+  machine_type = lookup(var.instance_type, local.environment)
+  zone         = lookup(var.instance_zone, local.environment)
 
   labels = merge(
-    var.instance_labels,
     {
       criador = var.criador
-      env     = format("%s", var.environment)
+      env     = format("%s", local.environment)
     },
     local.common_labels
   )

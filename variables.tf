@@ -1,4 +1,4 @@
-variable "environment" {
+/*variable "environment" {
   type        = string
   description = "Digite 'dev' ou 'prod'"
   validation {
@@ -6,13 +6,7 @@ variable "environment" {
     error_message = "Digite dev ou prod."
   }
 }
-
-variable "gcp_region" {
-  type        = string
-  description = ""
-  default     = "us-east1"
-}
-
+*/
 variable "instance_number" {
   type = object({
     dev  = number
@@ -34,6 +28,18 @@ variable "instance_type" {
   default = {
     dev  = "e2-micro"
     prod = "e2-small"
+  }
+}
+
+variable "instance_zone" {
+  type = object({
+    dev  = string
+    prod = string
+  })
+  description = ""
+  default = {
+    dev  = "us-central1-c"
+    prod = "us-east1-b"
   }
 }
 

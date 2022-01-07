@@ -1,4 +1,4 @@
 
 output "bucket" {
-    value = google_storage_bucket.auto-expire.name
+    value = google_storage_bucket.remote_state.name
 }

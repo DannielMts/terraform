@@ -1,5 +1,5 @@
 locals {
-  instance_number = lookup(var.instance_number, var.environment)
+  instance_number = lookup(var.instance_number, local.environment)
 }
 
 locals{
@@ -8,4 +8,8 @@ locals{
     manageby = "terraform"
     so = "linux"
   }
+}
+
+locals {
+  environment = terraform.workspace == "default" ? "dev" : terraform.workspace
 }
