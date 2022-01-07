@@ -13,13 +13,12 @@ resource "google_storage_bucket" "auto-expire" {
   }
 }
 
-/*
-resource "google_storage_bucket_object" "tfstate" {
 
+resource "google_storage_bucket_object" "tfstate" {
+  depends_on = [google_storage_bucket.auto-expire]
   name   = "arquivoDEestado"
   source = "terraform.tfstate.backup"
   bucket = "bucket-arquivo-de-estado"
 }
 
 
-*/

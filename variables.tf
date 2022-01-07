@@ -37,14 +37,6 @@ variable "instance_type" {
   }
 }
 
-variable "instance_labels" {
-  type        = map(string)
-  description = ""
-  default = {
-    projeto = "projeto-final"
-  }
-}
-
 variable "criador" {
   type        = string
   description = ""

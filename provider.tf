@@ -4,11 +4,7 @@ provider "google" {
   credentials = "terraform.json"
 }
 
-module "dev" {
-  source = "./modules/dev"
-  
-}
-module "prod" {
-  source = "./modules/prod"
+module "bucket" {
+  source = "./modules/bucket"
   
 }

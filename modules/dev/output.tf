@@ -1,3 +1,0 @@
-output "servidores" {
-  value = "aaaa"
-}

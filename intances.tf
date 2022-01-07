@@ -1,4 +1,5 @@
 // Criação de instancia
+// Contaminar terraform apply -replace="google_compute_instance.server[1]"
 resource "google_compute_instance" "server" {
     
   count = local.instance_number <= 0 ? 0 : local.instance_number
