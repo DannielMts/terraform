@@ -14,8 +14,8 @@ variable "instance_number" {
   })
   description = ""
   default = {
-    dev  = 1
-    prod = 2
+    dev  = 2
+    prod = 3
   }
 }
 

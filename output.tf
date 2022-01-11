@@ -1,6 +1,6 @@
 // Nome do server
 output "servidores" {
-  value = google_compute_instance.server[*].name
+  value = google_compute_instance.server[*].zone
 }
 
 output "qtde_iniciada" {
